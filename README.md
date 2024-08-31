@@ -63,7 +63,122 @@ N=7789
 	}`
 
 
- 
+
+Printing all the Divisors of a number:
+
+public static int sumOfAllDivisors1(int n){
+        
+        int c=0;
+      
+        for(int i=1;i*i<=n;i++){
+            if(n%i==0) {
+                c+=i; 
+                if(n/i!=i) {c+=(n/i);}
+            }
+        }
+       
+        return c;
+    }
+
+
+
+Prime number check:
+What's a prime number? A number that exactly have 2 numbers, 1 and iteself
+
+Bruteforce:
+
+boolean checkPrime(int N){
+int c=0;
+for(int i=1;i<=n;i++){
+	if(N%i==0) c++;
+}
+if(c==2) return true;
+else return false;
+}
+
+
+
+TC -> O(N)
+
+
+
+Optimized:
+
+boolean checkPrime(int N){
+	int c=0;
+ 	for(int i=1;i*i<=N;i++){
+		if(N%i==0) c++;
+  		if(N/i!=i) c++;
+  	}
+   if(c==2) return true;
+   else return false;
+}
+
+
+
+
+GCD or HCF (Greatest Common Divisor or Highest Common Factor)
+
+N1 = 9 N2=12
+
+factors of 9 -> 1, 3, 9
+factors of 12 -> 1, 2, 3, 4, 6, 12
+
+so common factors are 1, 3 -> highest is 3 so GCD of 9 and 12 is 3
+
+
+GCD of 11, 13 is 1 -> (11 has 1, 11 as factors and 13 has 1, 13 as factors)
+
+
+1st form:
+
+gcd=1;
+for(int i=1;i<=min(n1, n2);i++){
+	if(n1%i==0 && n2%i==0) gcd=i;
+}
+//at the end highest common factor will be the answer.
+
+TC -> O(min(n1, n2))
+another way.
+
+//if n1 =20, n2 =40 we can follow below its basically searching from highest to lowest and if we find answer we are breaking it, anyhow, its TC will be same as above
+
+for(int i=min(n1,n2);i>=1;i++){
+	if(n1%i==0 && n2%i==0) {
+ 	gcd=i;
+  	break;
+   	}
+}
+
+
+TC -> O(min(n1, n2))
+
+
+
+
+`EUCLIDEAN ALGORITHM`
+
+Euclidean algorithm states that `gcd(a,b)=gcd(a-b,b) where a>b`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  
 
